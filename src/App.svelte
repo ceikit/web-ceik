@@ -1,30 +1,79 @@
 <script>
-	export let name;
+    let email = 'dddd@email.com';
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+    body {
+        font-family: 'Helvetica', sans-serif;
+        background-color: #131B26;
+        color: #F2F2F2;
+        margin: 0;
+    }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        background-color: #131B26;
+        color: #F2F2F2;
+    }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+    section {
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    a {
+        color: #F2F2F2;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        margin: 10px 0;
+    }
 </style>
+
+<nav>
+    <h1>Radon Tech</h1>
+</nav>
+
+<main>
+    <!-- About Section -->
+    <section>
+        <h2>About</h2>
+        <p>Risk Management and Investment Solutions for the Crypto industry.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section>
+        <h2>Services</h2>
+        <ul>
+            <li>Risk management and yield enhancement</li>
+            <li>Market making</li>
+            <li>Optimal execution</li>
+        </ul>
+    </section>
+
+    <!-- Products Section -->
+    <section>
+        <h2>Products</h2>
+        <ul>
+            <li>Covered call</li>
+            <li>Covered put</li>
+            <li>Accumulator</li>
+            <li>Range farmer</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+        <h2>Contact</h2>
+        <p>Email us at: <a href="mailto:{email}">{email}</a></p>
+    </section>
+</main>
