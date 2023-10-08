@@ -6,7 +6,7 @@
     body {
         font-family: 'Helvetica', sans-serif;
         color: #F2F2F2;
-		background: url('/44.jpg') no-repeat center center fixed;
+		background: url('/44.jpg') no-repeat center center fixed !important;
         background-size: cover; /* This will cover the entire viewport */
         margin: 0;
     }
