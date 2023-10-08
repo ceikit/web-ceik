@@ -7,6 +7,8 @@
         font-family: 'Helvetica', sans-serif;
         background-color: #131B26;
         color: #F2F2F2;
+		background: url('/44.jpg') no-repeat center center fixed;
+        background-size: cover; /* This will cover the entire viewport */
         margin: 0;
     }
 
@@ -22,6 +24,9 @@
     section {
         padding: 50px 0;
         text-align: center;
+		background-color: rgba(19, 27, 38, 0.7); /* This is a semi-transparent version of #131B26 */
+        padding: 20px;
+        border-radius: 5px; /* Optional, for rounded corners */
     }
 
     a {
