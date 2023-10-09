@@ -47,7 +47,7 @@
 			</svelte:fragment>
 		
 			<svelte:fragment slot="trail">
-				{#if isMobile}
+				{#if !isMobile}
 					<TreeView>
 						<TreeViewItem class="btn btn-sm variant-ghost-surface"> Menu 
 							<svelte:fragment slot="children">

@@ -2,10 +2,14 @@
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
-		<h2 class="h2">CEIKIT TECH</h2>
+		<h1 class="h1">CEIKIT TECH</h1>
 		<!-- Animated Logo -->
+		<div class="image"></div>
+		<slot></slot>
+
 		<figure>
 			<section class="img-bg" />
+			
 			<svg
 				class="fill-token -scale-x-[100%]"
 				xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +40,27 @@
 	</div>
 </div>
 
+
 <style lang="postcss">
+	.image {
+	  position: absolute;
+	  height: 1%;
+	  width: 100%;
+	  top: 0;
+	  background-image: url('radon.png');
+	  z-index: -1;
+
+	  @apply bg-cover bg-no-repeat bg-center h-screen;
+		background-color: rgba(255, 0, 0, 0.3);  /* Red with 30% opacity */
+
+        background-image: url('radon.png');
+		background-position: center;
+   		background-repeat: no-repeat;
+   		background-size: cover;
+    
+	}
+
+	
 	figure {
 		@apply flex relative flex-col;
 	}
@@ -67,5 +91,6 @@
 		50% {
 			transform: scale(1.5);
 		}
-	}
+	} 
+	
 </style>
