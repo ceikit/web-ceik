@@ -15,6 +15,16 @@
 <p >Ciao patatella baby amore mio grande</p>
 
 
+<ul class="list">
+	<li>
+		<span>(icon)</span>
+		<span class="flex-auto">Skeleton</span>
+	</li>
+	<!-- ... -->
+</ul>
+
+
+
 {#if Device.isMobile}
     <div class="option-bar">ASDADA</div>
 {/if}

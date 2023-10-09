@@ -52,7 +52,7 @@
 			<svelte:fragment slot="trail">
 				{#if isMobile}
 					<TreeView>
-						<TreeViewItem class="btn btn-sm variant-ghost-surface"> Menu 
+						<TreeViewItem> Menu 
 							<svelte:fragment slot="children">
 								<TreeViewItem > 
 									<a class="btn btn-sm variant-ghost-surface" href="/about">About</a>
@@ -81,11 +81,14 @@
 		</AppBar>
 	</svelte:fragment>
 
+	
 	<svelte:fragment slot="sidebarLeft">
-		<AppRail width="auto" >
-			<svelte:fragment slot="lead">
-				<AppRailAnchor href="/" >(icon)</AppRailAnchor>
-			</svelte:fragment>
+		{#if !isMobile}
+		<AppRail width="">
+				<AppRailAnchor href="/"  title="Account" width="50px">
+					<svelte:fragment slot="lead">ICON</svelte:fragment>
+
+				</AppRailAnchor>
 			<!-- --- -->
 			<AppRailTile bind:group={currentTile} name="tile-1" value={0} title="tile-1">
 				<svelte:fragment slot="lead">Services</svelte:fragment>
@@ -104,7 +107,9 @@
 				<AppRailAnchor href="/" target="_blank" title="Account">(icon)</AppRailAnchor>
 			</svelte:fragment> -->
 		</AppRail>
+		{/if}
 	</svelte:fragment>
+	
 
 	
 
