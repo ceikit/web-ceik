@@ -47,7 +47,7 @@
 			</svelte:fragment> -->
 			<svelte:fragment slot="trail">
 				<!-- Adjust, add or remove these links as needed -->
-				<a class="btn btn-sm variant-ghost-surface" href="#about">About</a>
+				<a class="btn btn-sm variant-ghost-surface" href="/about">About</a>
 				<a class="btn btn-sm variant-ghost-surface" href="#services">Services</a>
 				<a class="btn btn-sm variant-ghost-surface" href="#products">Products</a>
 				<a class="btn btn-sm variant-ghost-surface" href="#contact">Contact</a>
