@@ -6,10 +6,13 @@
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+	let isFocused: boolean = true;
+
 </script>
 
+
 <!-- App Shell -->
-<AppShell>
+<AppShell scrollbarGutter="auto">
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
 		<AppBar>
@@ -50,6 +53,25 @@
 				<a class="btn btn-sm variant-ghost-surface" href="#contact">Contact</a>
 			</svelte:fragment>
 		</AppBar>
+		<script>
+			import { focusTrap } from '@sveltejs/site-kit';
+			import { onMount } from 'svelte';
+
+			let isFocused = true;
+
+			onMount(() => {
+				const trap = focusTrap(document.querySelector('form'));
+				trap.activate();
+				return () => {
+					trap.deactivate();
+				};
+			});
+		</script>
+
+		<form>
+			<input type="text" placeholder="Name" />
+			<button class="btn variant-filled-primary">Submit</button>
+		</form>
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
