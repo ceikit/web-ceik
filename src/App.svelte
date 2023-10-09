@@ -1,52 +1,61 @@
 <script>
-    import 'bootstrap/dist/css/bootstrap.min.css';
     let email = 'dddd@email.com';
 </script>
 
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+</head>
+
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">Radon Tech</a>
+<div class="container">
+    <div class="row">
+        <div class="twelve columns u-pull-right">
+            <h1 class="u-pull-left">Radon Tech</h1>
+        </div>
     </div>
-</nav>
+</div>
 
 <!-- Main Content -->
-<div class="container mt-5 py-5 text-light" style="background-color: #131B26; border-radius: 10px;">
+<div class="container" style="background-color: #131B26; padding: 3em; border-radius: 7px;">
+
     <!-- About Section -->
-    <section class="mb-5">
-        <h2 class="display-4">About</h2>
-        <p class="lead">Risk Management and Investment Solutions for the Crypto industry.</p>
+    <section>
+        <h2>About</h2>
+        <p>Risk Management and Investment Solutions for the Crypto industry.</p>
+        <hr>
     </section>
 
     <!-- Services Section -->
-    <section class="mb-5">
-        <h2 class="display-4">Services</h2>
-        <ul class="list-unstyled mt-4">
-            <li class="lead">Risk management and yield enhancement</li>
-            <li class="lead">Market making</li>
-            <li class="lead">Optimal execution</li>
+    <section>
+        <h2>Services</h2>
+        <ul class="square">
+            <li>Risk management and yield enhancement</li>
+            <li>Market making</li>
+            <li>Optimal execution</li>
         </ul>
+        <hr>
     </section>
 
     <!-- Products Section -->
-    <section class="mb-5">
-        <h2 class="display-4">Products</h2>
-        <ul class="list-unstyled mt-4">
-            <li class="lead">Covered call</li>
-            <li class="lead">Covered put</li>
-            <li class="lead">Accumulator</li>
-            <li class="lead">Range farmer</li>
+    <section>
+        <h2>Products</h2>
+        <ul class="square">
+            <li>Covered call</li>
+            <li>Covered put</li>
+            <li>Accumulator</li>
+            <li>Range farmer</li>
         </ul>
+        <hr>
     </section>
 
     <!-- Contact Section -->
-    <section class="mb-5">
-        <h2 class="display-4">Contact</h2>
-        <p class="lead mt-4">Email us at: <a href="mailto:{email}" class="text-info">{email}</a></p>
+    <section>
+        <h2>Contact</h2>
+        <p>Email us at: <a href="mailto:{email}">{email}</a></p>
     </section>
+
 </div>
 
-<!-- Background Image -->
 <style>
     body {
         font-family: 'Helvetica', sans-serif;
@@ -56,8 +65,17 @@
         margin: 0;
         height: 100vh;
     }
+    
+    a {
+        color: #F2F2F2;
+    }
+    
+    hr {
+        border-top: 2px solid #F2F2F2;
+        margin: 2em 0;
+    }
 
-    .display-4 {
-        font-size: 2rem;
+    h1, h2 {
+        color: #F2F2F2;
     }
 </style>
