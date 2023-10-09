@@ -66,31 +66,31 @@
 		
 			<svelte:fragment slot="trail">
 
-				{#if !isMobile}
-					<div> GGG</div>
-				{/if}
-
 				{#if isMobile}
 				<TreeView>
-					<TreeViewItem> About </TreeViewItem>
-					<TreeViewItem> Services </TreeViewItem>
-					<TreeViewItem> Products </TreeViewItem>
-					<TreeViewItem> Contacts </TreeViewItem>
+					<TreeViewItem class="btn btn-sm variant-ghost-surface"> Menu 
+					<svelte:fragment slot="children">
+						<TreeViewItem > 
+							<a class="btn btn-sm variant-ghost-surface" href="/about">About</a>
+						 </TreeViewItem>
+						 <TreeViewItem > 
+							<a class="btn btn-sm variant-ghost-surface" href="/services">Services</a>
+						 </TreeViewItem>
+						 <TreeViewItem > 
+							<a class="btn btn-sm variant-ghost-surface" href="/products">Products</a>
+						 </TreeViewItem>
+						 <TreeViewItem > 
+							<a class="btn btn-sm variant-ghost-surface" href="/contacts">Contacts</a>
+						 </TreeViewItem>
+					</svelte:fragment>
+				</TreeViewItem>
 				</TreeView>
 				{/if}
 				
-				<a class="btn btn-sm variant-ghost-surface" href="/about"
-					>About</a
-				>
-				<a class="btn btn-sm variant-ghost-surface" href="/services"
-					>Services</a
-				>
-				<a class="btn btn-sm variant-ghost-surface" href="/products"
-					>Products</a
-				>
-				<a class="btn btn-sm variant-ghost-surface" href="/contact"
-					>Contact</a
-				>
+				<a class="btn btn-sm variant-ghost-surface" href="/about">About</a>
+				<a class="btn btn-sm variant-ghost-surface" href="/services">Services</a>
+				<a class="btn btn-sm variant-ghost-surface" href="/products">Products</a>
+				<a class="btn btn-sm variant-ghost-surface" href="/contact">Contact</a>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
