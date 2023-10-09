@@ -27,24 +27,6 @@
 	let isFocused: boolean = false;
 	let isMobile: boolean = false;
 
-	
-
-	// if page is rendered change isFocused to true
-	$: if (isFocused) {
-		storePopup.update((state) => ({ ...state, isFocused }));
-	}
-
-	if (isFocused) {
-		console.log("ASDADA" + Device.isMobile)
-	} else {
-		console.log("isNotFocused");
-	}
-
-	// if page is not rendered change isFocused to false
-	$: if (!isFocused) {
-		storePopup.update((state) => ({ ...state, isFocused }));
-	}
-
 	onMount(() => {
 		console.log("Mounted");
 		console.log(Device.isMobile);
@@ -65,7 +47,6 @@
 			</svelte:fragment>
 		
 			<svelte:fragment slot="trail">
-
 				{#if isMobile}
 				<TreeView>
 					<TreeViewItem class="btn btn-sm variant-ghost-surface"> Menu 
@@ -86,11 +67,13 @@
 				</TreeViewItem>
 				</TreeView>
 				{/if}
-				
+
+				{#if !isMobile}
 				<a class="btn btn-sm variant-ghost-surface" href="/about">About</a>
 				<a class="btn btn-sm variant-ghost-surface" href="/services">Services</a>
 				<a class="btn btn-sm variant-ghost-surface" href="/products">Products</a>
 				<a class="btn btn-sm variant-ghost-surface" href="/contact">Contact</a>
+				{/if}
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
