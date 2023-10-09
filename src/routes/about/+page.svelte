@@ -10,8 +10,9 @@
     console.log(Device.isMobile);
 </script>
 
-<h1>About Us</h1>
-<p>Ciao patatella baby amore mio grande</p>
+<h1 class="h1">About Us</h1>
+<h2 class="h2">About Us</h2>
+<p >Ciao patatella baby amore mio grande</p>
 
 
 {#if Device.isMobile}

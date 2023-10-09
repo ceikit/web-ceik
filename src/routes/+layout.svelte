@@ -23,6 +23,7 @@
 	import { storePopup } from "@skeletonlabs/skeleton";
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 	import Device from "svelte-device-info";
+	import { AppRail, AppRailTile, AppRailAnchor } from '@skeletonlabs/skeleton';
 	
 	let isFocused: boolean = false;
 	let isMobile: boolean = false;
@@ -33,11 +34,13 @@
 		isMobile = Device.isMobile;
 	});
 
+	let currentTile: number = 0;
+
 </script>
 
 <!-- App Shell -->
 <AppShell scrollbarGutter="auto">
-	<svelte:fragment slot="pageHeader">
+	<svelte:fragment slot="header">
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
@@ -77,6 +80,34 @@
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
+
+	<svelte:fragment slot="sidebarLeft">
+		<AppRail width="auto" >
+			<svelte:fragment slot="lead">
+				<AppRailAnchor href="/" >(icon)</AppRailAnchor>
+			</svelte:fragment>
+			<!-- --- -->
+			<AppRailTile bind:group={currentTile} name="tile-1" value={0} title="tile-1">
+				<svelte:fragment slot="lead">Services</svelte:fragment>
+				<!-- <span>Tile 1</span> -->
+			</AppRailTile>
+			<AppRailTile bind:group={currentTile} name="tile-2" value={1} title="tile-2">
+				<svelte:fragment slot="lead">Products</svelte:fragment>
+				<!-- <span>Tile 2</span> -->
+			</AppRailTile>
+			<AppRailTile bind:group={currentTile} name="tile-3" value={2} title="tile-3">
+				<svelte:fragment slot="lead">Technology</svelte:fragment>
+				<span>Tile 3</span>
+			</AppRailTile>
+			<!-- --- -->
+			<!-- <svelte:fragment slot="trail">
+				<AppRailAnchor href="/" target="_blank" title="Account">(icon)</AppRailAnchor>
+			</svelte:fragment> -->
+		</AppRail>
+	</svelte:fragment>
+
+	
+
 	<!-- Page Route Content -->
 	<slot />
 </AppShell>

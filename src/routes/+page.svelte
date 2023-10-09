@@ -4,9 +4,7 @@
 	<div class="space-y-10 text-center flex flex-col items-center">
 		<h1 class="h1">CEIKIT TECH</h1>
 		<!-- Animated Logo -->
-		<div class="image"></div>
-		<slot></slot>
-
+		<!-- <div class="image"></div> -->
 		<figure>
 			<section class="img-bg" />
 			

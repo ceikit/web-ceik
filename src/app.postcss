@@ -1,3 +1,31 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Thin.ttf'); /* Using Regular weight for default */
+}
+
+@font-face {
+    font-family: 'Inter-Thin';
+    src: url('/fonts/Inter-Thin.ttf'); 
+}
+
+@font-face {
+    font-family: 'Inter-Light';
+    src: url('/fonts/Inter-Light.ttf'); 
+}
+
+@font-face {
+    font-family: 'Inter-Reg';
+    src: url('/fonts/Inter-Regular.ttf'); 
+}
+
+/* Apply the Inter font to all elements on the website by default */
+
+
+:root [data-theme='skeleton'] { 
+    --theme-font-family-base: 'Inter-Black', sans-serif;
+    --theme-font-family-heading: 'Inter', sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,5 +33,6 @@
 
 html,
 body {
-	@apply h-full overflow-hidden;
+    @apply h-full overflow-hidden;
+    font-family:'Inter-Reg', sans-serif;
 }
