@@ -12,9 +12,7 @@
 
 <h1>About Us</h1>
 <p>Ciao patatella baby amore mio grande</p>
-<RangeSlider name="range-slider" bind:value max={25} step={1} ticked
-    >Label</RangeSlider
->
+
 
 {#if Device.isMobile}
     <div class="option-bar">ASDADA</div>

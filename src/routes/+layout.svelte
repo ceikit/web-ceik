@@ -1,6 +1,7 @@
 
 <script lang="ts">
 	import "../app.postcss";
+	import { onMount } from 'svelte';
 	import {
 		AppShell,
 		AppBar,
@@ -24,6 +25,7 @@
 	import Device from "svelte-device-info";
 	
 	let isFocused: boolean = false;
+	let isMobile: boolean = false;
 
 	
 
@@ -43,8 +45,11 @@
 		storePopup.update((state) => ({ ...state, isFocused }));
 	}
 
-	if (isFocused) {
-		console.log("isFocused")}
+	onMount(() => {
+		console.log("Mounted");
+		console.log(Device.isMobile);
+		isMobile = Device.isMobile;
+	});
 
 </script>
 
@@ -61,9 +66,18 @@
 		
 			<svelte:fragment slot="trail">
 
-			
+				{#if !isMobile}
+					<div> GGG</div>
+				{/if}
 
-				<div> GGG</div>
+				{#if isMobile}
+				<TreeView>
+					<TreeViewItem> About </TreeViewItem>
+					<TreeViewItem> Services </TreeViewItem>
+					<TreeViewItem> Products </TreeViewItem>
+					<TreeViewItem> Contacts </TreeViewItem>
+				</TreeView>
+				{/if}
 				
 				<a class="btn btn-sm variant-ghost-surface" href="/about"
 					>About</a
@@ -74,27 +88,6 @@
 				<a class="btn btn-sm variant-ghost-surface" href="/products"
 					>Products</a
 				>
-				<TreeView>
-					<TreeViewItem>
-						(item 1)
-						<svelte:fragment slot="children">
-							<TreeViewItem>
-								(Child 1)
-								<svelte:fragment slot="children">
-									<TreeViewItem>
-										(Child of Child 1)
-									</TreeViewItem>
-									<TreeViewItem>
-										(Child of Child 2)
-									</TreeViewItem>
-								</svelte:fragment>
-							</TreeViewItem>
-							<TreeViewItem>(Child 2)</TreeViewItem>
-						</svelte:fragment>
-					</TreeViewItem>
-					<TreeViewItem>(item 2)</TreeViewItem>
-				</TreeView>
-
 				<a class="btn btn-sm variant-ghost-surface" href="/contact"
 					>Contact</a
 				>
