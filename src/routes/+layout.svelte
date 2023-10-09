@@ -1,3 +1,4 @@
+
 <script lang="ts">
 	import "../app.postcss";
 	import {
@@ -5,7 +6,9 @@
 		AppBar,
 		TreeView,
 		TreeViewItem,
-	} from "@skeletonlabs/skeleton";
+	} from "@skeletonlabs/skeleton";	
+
+	// import svelte-device-info
 
 	// Floating UI for Popups
 	import {
@@ -18,7 +21,31 @@
 	} from "@floating-ui/dom";
 	import { storePopup } from "@skeletonlabs/skeleton";
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
-	let isFocused: boolean = true;
+	import Device from "svelte-device-info";
+	
+	let isFocused: boolean = false;
+
+	
+
+	// if page is rendered change isFocused to true
+	$: if (isFocused) {
+		storePopup.update((state) => ({ ...state, isFocused }));
+	}
+
+	if (isFocused) {
+		console.log("ASDADA" + Device.isMobile)
+	} else {
+		console.log("isNotFocused");
+	}
+
+	// if page is not rendered change isFocused to false
+	$: if (!isFocused) {
+		storePopup.update((state) => ({ ...state, isFocused }));
+	}
+
+	if (isFocused) {
+		console.log("isFocused")}
+
 </script>
 
 <!-- App Shell -->
@@ -31,281 +58,42 @@
 					<strong class="text-xl uppercase">Radon Tech</strong>
 				</a>
 			</svelte:fragment>
-			<!-- <svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
-			</svelte:fragment> -->
-			<!-- <svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
-			</svelte:fragment> -->
-			<!-- <svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
-			</svelte:fragment> -->
-			<!-- <svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
-			</svelte:fragment> -->
-			<!-- <svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
-			</svelte:fragment> -->
-			<!-- <svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
-			</svelte:fragment> -->
-			<!-- <svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
-			</svelte:fragment> -->
-			<!-- <svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
-			</svelte:fragment> -->
-			<style>
-				/* Hide the trail fragment on screens smaller than 640px */
-				@media (max-width: 640px) {
-					[slot="trail"] {
-						display: none;
-					}
-				}
-
-				/* Style the option bar */
-				.option-bar {
-					display: none;
-					position: absolute;
-					top: 100%;
-					right: 0;
-					background-color: white;
-					box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-					padding: 0.5rem;
-					z-index: 1;
-				}
-
-				.option-bar a {
-					display: block;
-					margin-bottom: 0.5rem;
-				}
-			</style>
-
+		
 			<svelte:fragment slot="trail">
-				<!-- Adjust, add or remove these links as needed -->
-				<div class="option-bar">
-					<a class="btn btn-sm variant-ghost-surface" href="/about"
-						>About</a
-					>
-					<a class="btn btn-sm variant-ghost-surface" href="/services"
-						>Services</a
-					>
-					<a class="btn btn-sm variant-ghost-surface" href="/products"
-						>Products</a
-					>
-					<a class="btn btn-sm variant-ghost-surface" href="/contact"
-						>Contact</a
-					>
-				</div>
+
+			
+
+				<div> GGG</div>
+				
 				<a class="btn btn-sm variant-ghost-surface" href="/about"
-					>About
-				</a>
+					>About</a
+				>
 				<a class="btn btn-sm variant-ghost-surface" href="/services"
-					>Services
-				</a>
-				<TreeView class="btn btn-sm variant-ghost-surface">
-					<a 
-					href="/products"> Products </a>
+					>Services</a
+				>
+				<a class="btn btn-sm variant-ghost-surface" href="/products"
+					>Products</a
+				>
+				<TreeView>
 					<TreeViewItem>
+						(item 1)
 						<svelte:fragment slot="children">
 							<TreeViewItem>
-								<a
-									class="btn btn-sm variant-ghost-surface"
-									href="/products/covered_call"
-									>Covered Call
-								</a>
+								(Child 1)
+								<svelte:fragment slot="children">
+									<TreeViewItem>
+										(Child of Child 1)
+									</TreeViewItem>
+									<TreeViewItem>
+										(Child of Child 2)
+									</TreeViewItem>
+								</svelte:fragment>
 							</TreeViewItem>
-							<TreeViewItem>Accumulator</TreeViewItem>
+							<TreeViewItem>(Child 2)</TreeViewItem>
 						</svelte:fragment>
 					</TreeViewItem>
+					<TreeViewItem>(item 2)</TreeViewItem>
 				</TreeView>
-				<a class="btn btn-sm variant-ghost-surface" href="/products"
-					>Products
-				</a>
 
 				<a class="btn btn-sm variant-ghost-surface" href="/contact"
 					>Contact</a
