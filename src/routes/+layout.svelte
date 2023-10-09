@@ -13,7 +13,7 @@
 
 <!-- App Shell -->
 <AppShell scrollbarGutter="auto">
-	<svelte:fragment slot="header">
+	<svelte:fragment slot="pageHeader">
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
